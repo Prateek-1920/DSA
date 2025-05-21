@@ -23,7 +23,11 @@ int main(){
     int vertices = graph.size();
     vector<bool> visited(vertices,false);
     cout<<"DFS Traversal: "<<endl;
-    DFS(0,graph,visited);
-    return 0;
+    for (int i = 0; i < vertices; ++i) {
+        if (!visited[i]) {
+            DFS(i, graph, visited);
+        }
+    }    
+    return 0;    
 }
 

@@ -3,9 +3,7 @@
 #include<queue>
 using namespace std;
 
-void BFS(int node,const vector<vector<int>>& graph){
-    int vertices = graph.size();
-    vector<bool> visited(vertices,false);
+void BFS(int node,const vector<vector<int>>& graph, vector<bool> &visited){
     queue<int> q;
     visited[node] = true;
     q.push(node);
@@ -31,7 +29,12 @@ int main(){
         {2,3},
         {0,3}
     };
-
-    BFS(0,graphs);
+    
+    int v = graphs.size();
+    vector<bool>visited(v,false);
+    for(int i=0;i<v;i++){
+        if(!visited[i])
+        BFS(i,graphs,visited);
+    }
     return 0;
 }

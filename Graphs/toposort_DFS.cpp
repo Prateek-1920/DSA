@@ -13,9 +13,9 @@ void dfs(int node, vector<vector<int>>& graph, vector<bool>& visited, stack<int>
     st.push(node);
 }
 
-void toposort(vector<vector<int>>& graph){
+void toposort(vector<vector<int>>& graph, vector<bool>& visited){
     int vertices = graph.size();
-    vector<bool> visited(vertices,false);
+    // vector<bool> visited(vertices,false);
     stack<int> st;
     for(int i=0;i<vertices;i++){
         if(!visited[i]){
@@ -39,6 +39,7 @@ int main(){
     };
 
     int v = graph.size();
-    toposort(graph);
+    vector<bool> visited(v,false);
+    toposort(graph,visited);
     return 0;
 }
