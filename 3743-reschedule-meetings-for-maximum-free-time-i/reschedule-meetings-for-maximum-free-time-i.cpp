@@ -2,19 +2,19 @@ class Solution {
 public:
     int maxFreeTime(int eventTime, int k, vector<int>& startTime, vector<int>& endTime) {
 
-        vector<pair<int, int>> events;
+        // vector<pair<int, int>> events;
         int n = startTime.size();
 
-        for (int i = 0; i < n; i++) {
-            events.push_back({startTime[i], endTime[i]});
-        }
+        // for (int i = 0; i < n; i++) {
+        //     events.push_back({startTime[i], endTime[i]});
+        // }
 
-        sort(events.begin(), events.end());
+        // sort(events.begin(), events.end());
 
-        for (int i = 0; i < n; i++) {
-            startTime[i] = events[i].first;
-            endTime[i] = events[i].second;
-        }
+        // for (int i = 0; i < n; i++) {
+        //     startTime[i] = events[i].first;
+        //     endTime[i] = events[i].second;
+        // }
 
 
         vector<int> freetime(n+1);
@@ -22,7 +22,7 @@ public:
         for(int i=1;i<n;i++){
             freetime[i] = startTime[i]-endTime[i-1];
         }
-        
+
         freetime[0] = startTime[0];
         freetime[n] = eventTime-endTime[n-1];
 
