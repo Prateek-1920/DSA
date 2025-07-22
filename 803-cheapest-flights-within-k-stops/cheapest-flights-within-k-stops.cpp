@@ -13,7 +13,7 @@ public:
         }
 
         priority_queue<vector<int>, vector<vector<int>>, greater<>> pq;
-        pq.push({0,src,0});
+        pq.push({0,src,0}); //IMPORTANT
         while(!pq.empty()){
             int node = pq.top()[1];
             int cost = pq.top()[0];
