@@ -31,19 +31,6 @@ public:
             }
         }
 
-        // int left = -1;
-        // int right = 0;
-        // for(int i=0;i<n;i++){
-        //     if(nums[i]==max_ele){
-        //         if(left==-1){
-        //             left = i;
-        //         }
-        //         // else{
-        //             right = i;
-        //         // }
-        //     }
-        // }
-
         int ans = INT_MAX;
         for(int i : elements){
             ans = min(ans,find(nums,i));
