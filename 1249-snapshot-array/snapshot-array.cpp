@@ -22,12 +22,13 @@ int snapid;
     }
     
     int get(int index, int snap_id) {
-        auto& v = snap_arr[index];
-        if (v.empty()) return 0;
+        // auto v = snap_arr[index];
+        // if (v.empty()) return 0;
 
-        auto it = upper_bound(v.begin(), v.end(), make_pair(snap_id, INT_MAX));
-        it--;
-        return it->second;
+        auto it = upper_bound(snap_arr[index].begin(), snap_arr[index].end(), make_pair(snap_id, INT_MAX));
+        // it--;
+        // return it->second;
+        return prev(it)->second;
     }
 };
 
