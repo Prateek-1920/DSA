@@ -41,7 +41,7 @@ public:
                 char op = st.top();
                 st.pop();
                 bool b = parse(op,temp);
-                st.push(b?'t':'f');
+                st.push(b==true?'t':'f');
             }
         }
         return st.top()=='t';
